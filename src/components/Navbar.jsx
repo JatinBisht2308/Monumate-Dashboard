@@ -14,7 +14,7 @@ function Navbar() {
             <div className="notification">
                 <div className="date">
                     <AiOutlineCalendar />
-                    <span>Jan 30, 2022</span>
+                    <span>Apr 25, 2023</span>
                 </div>
                 <div className="icon">
                     <BiSearch />

@@ -18,16 +18,16 @@ function Orders() {
             <table>
             <tr>
               <th>Tracking ID</th>
-              <th>Product Name</th>
+              <th>Monument Name</th>
               <th>Date</th>
               <th>Price</th>
               <th>Status</th>
             </tr>
             <tr>
               <td>#9876543</td>
-              <td className="img"> <img src={apple} alt="" /><span>Apple Watch</span></td>
-              <td>Jul 29, 2021</td>
-              <td>$329</td>
+              <td className="img"> <img src="https://theheritageart.com/wp-content/uploads/2022/11/Jantar-Mantar_1400-1000x565.jpeg" alt="" /><span>Jantar Mantar</span></td>
+              <td>Apr 25, 2023</td>
+              <td>₹35,000</td>
               <td ><button>Complete</button></td>
             </tr>
             </table>

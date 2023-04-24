@@ -14,7 +14,7 @@ function Statistic() {
                         <AiFillTag />
                     </div>
                     <div className="content">
-                        <h5>$123,456,789</h5>
+                        <h5>₹3,00,000</h5>
                     </div>
                 </div>
                 <div className="total">
@@ -29,7 +29,7 @@ function Statistic() {
                         <AiFillExperiment />
                     </div>
                     <div className="content">
-                        <h5>$123,456,345</h5>
+                        <h5>₹1,00,000</h5>
                     </div>
                 </div>
                 <div className="total">
@@ -44,7 +44,7 @@ function Statistic() {
                         <AiFillDollarCircle />
                     </div>
                     <div className="content">
-                        <h5>$123,456,876</h5>
+                        <h5>₹2,00,000</h5>
                     </div>
                 </div>
                 <div className="total">

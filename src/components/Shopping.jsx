@@ -70,7 +70,7 @@ function Shopping() {
         </div>
         </div>
         <div className="total ">
-        <h6>TOTAL PRODUCTS</h6>
+        <h6>TOTAL MONMENTS</h6>
         
       
         </div>
