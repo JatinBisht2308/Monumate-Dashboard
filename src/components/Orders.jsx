@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import apple from "../assets/apple.png"
 function Orders() {
     return (
         <Section>

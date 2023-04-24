@@ -37,7 +37,7 @@ function Sidebar() {
                             >
                                 <a href="#">
                                     <AiOutlineShoppingCart />
-                                    <span className="border">Orders</span>
+                                    <span className="border">Listed</span>
                                 </a>
                             </li>
                             <li
@@ -46,7 +46,7 @@ function Sidebar() {
                             >
                                 <a href="#">
                                     <AiOutlineShopping />
-                                    <span className="border">Products</span>
+                                    <span className="border">Monuments</span>
                                 </a>
                             </li>
                             <li
@@ -64,7 +64,7 @@ function Sidebar() {
                             >
                                 <a href="#">
                                     <AiOutlineUsergroupAdd />
-                                    <span className="border">Customers</span>
+                                    <span className="border">Reviews</span>
                                 </a>
                             </li>
                             <li
@@ -73,23 +73,13 @@ function Sidebar() {
                             >
                                 <a href="#">
                                     <AiOutlineMessage />
-                                    <span className="border">Message</span>
-                                </a>
-                            </li>
-                            <li
-                            className={currentLink === 7 ? "active" : "none"}
-                            onClick={() => setCurrentLink(7)}
-                            >
-                                <a href="#">
-                                    <AiOutlineSetting />
-                                    <span className="border">Settings</span>
+                                    <span className="border">Setting</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
             </div>
             <div className="map">
-                <SiAccusoft />
                 <span>Unlock more information<br></br>
                 now ! Upgrade to <strong>PRO</strong>
                 </span>
