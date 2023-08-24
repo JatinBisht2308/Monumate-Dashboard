@@ -79,11 +79,11 @@ function Sidebar() {
                         </ul>
                     </div>
             </div>
-            <div className="map">
+            {/* <div className="map">
                 <span>Unlock more information<br></br>
                 now ! Upgrade to <strong>PRO</strong>
                 </span>
-            </div>
+            </div> */}
             <div className="logout">
                 <a href="#">
                     <AiOutlineLogout />
