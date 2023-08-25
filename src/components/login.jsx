@@ -1,6 +1,34 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebaseConfig";
+function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-function login() {
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        if (user.email.endsWith("@admin.com")) {
+         console.log(user.email);
+        }
+      }
+    });
+
+    return unsubscribe;
+  }, []);
+  const handleLogin = (event) => {
+    event.preventDefault(); // Prevent form submission and page reload
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredentials) => {
+        const user = userCredentials.user;
+        console.log("LoggedIn with", user.email);
+      })
+      .catch((error) => {
+        alert(error.message); // Display the error message
+      });
+  };
+
   const divStyle = {
     backgroundColor: 'rgb(235, 235, 235)'
   };
@@ -23,16 +51,17 @@ function login() {
         <h2>
           <strong>Sign-In</strong>
         </h2>
-        <form action="" >
+        <form action="">
           <div className="mb-3">
             <label htmlFor="email">
-              <strong>Email </strong>{' '}
+              <strong>Email </strong>
             </label>
             <input
               type="email"
               placeholder="Enter Email"
               name="email"
               className="form-control rounded-0"
+              onChange={(event) => setEmail(event.target.value)}
             />
           </div>
 
@@ -45,10 +74,11 @@ function login() {
               placeholder="Enter Password"
               name="password"
               className="form-control rounded-0"
+              onChange={(event) => setPassword(event.target.value)}
             />
           </div>
 
-          <button type="submit" className="btn btn-success w-100 rounded-0" style={loginButtonStyle}>
+          <button className="btn btn-success w-100 rounded-0" style={loginButtonStyle} onClick={handleLogin}>
             Login
           </button>
           <p> You agree to our terms and policies</p>
@@ -61,4 +91,6 @@ function login() {
   );
 }
 
-export default login;
+
+
+export default Login;

@@ -1,17 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
-import Sidebar from './components/Sidebar'
-import Login from './components/login'
-import Dashboard from './components/Dashboard'
-import './app.css';
+import React from "react";
+import styled from "styled-components";
+import Sidebar from "./components/Sidebar";
+import Login from "./components/Login";
+import Dashboard from "./components/Dashboard";
+import "./app.css";
 
 function App() {
-  return ( 
+  return (
     <div className="container">
       <Login />
-      </div>
+    </div>
   );
 }
 
 export default App;
-
