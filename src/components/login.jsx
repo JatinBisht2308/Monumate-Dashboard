@@ -1,15 +1,21 @@
 import React,{useState,useEffect} from 'react';
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
 import { auth } from "../firebaseConfig";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         if (user.email.endsWith("@admin.com")) {
          console.log(user.email);
+         navigate('/dashboard');
+        }
+        else{
+          alert("Please enter a valid admin email address");
         }
       }
     });

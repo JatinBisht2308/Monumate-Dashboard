@@ -10,8 +10,22 @@ import { AiOutlineSetting } from "react-icons/ai";
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import { AiFillCodeSandboxCircle } from "react-icons/ai";
 import { SiAccusoft } from "react-icons/si";
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { signOut } from 'firebase/auth';
+import { auth } from '../firebaseConfig';
 
 function Sidebar() {
+    const navigate = useNavigate(); // Create navigate function
+
+    const handleLogout = async () => {
+      try {
+        await signOut(auth);
+        navigate('/');
+      } catch (error) {
+        console.error('Error logging out:', error);
+      }
+    };
+  
     const [currentLink, setCurrentLink] = useState(1);
     return (
         <Section>
@@ -87,7 +101,7 @@ function Sidebar() {
             <div className="logout">
                 <a href="#">
                     <AiOutlineLogout />
-                    <span>Logout</span>
+                    <span onClick={handleLogout}>Logout</span>
                 </a>
             </div>
         </Section>
