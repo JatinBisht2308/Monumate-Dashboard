@@ -2,6 +2,8 @@ import React,{useState,useEffect} from 'react';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import { auth } from "../firebaseConfig";
+import background from '../assets/login-bg.jpg';
+import '../styles/login.css';
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -39,7 +41,11 @@ function Login() {
     backgroundColor: 'rgb(235, 235, 235)'
   };
   const firstDivStyle = {
-    backgroundColor: 'rgb(255, 250, 250)'
+    backgroundColor: 'rgb(255, 250, 250)',
+    backgroundImage: `url(${background})`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center'
   };
   const loginButtonStyle = {
     backgroundColor: '#8bf7cd',
@@ -53,7 +59,7 @@ function Login() {
   };
   return (
     <div className="d-flex justify-content-center align-items-center custom-bg vh-100" style={firstDivStyle}>
-      <div className="custom-bg p-3 rounded w-25" style={divStyle}>
+      <div className="custom-bg p-3 rounded w-25 glass-style">
         <h2>
           <strong>Sign-In</strong>
         </h2>
