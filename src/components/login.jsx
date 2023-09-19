@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
-import {
-  signInWithEmailAndPassword,
-  sendPasswordResetEmail,
-} from "firebase/auth";
+import React, { useState } from "react";
+import bcrypt from 'bcryptjs';
+import { sendPasswordResetEmail } from "firebase/auth";
 import { collection, getDocs } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { auth, db } from "../firebaseConfig";
@@ -24,14 +22,15 @@ function Login() {
     try {
       const querySnapshot = await getDocs(collection(db, "admin"));
       var data;
-      querySnapshot.forEach((doc) =>{
+      querySnapshot.forEach((doc) => {
         data = doc.data();
-         console.log("data is got -> ",data);
+        console.log("data is got -> ", data);
       });
-      if(data.password === password && data.mailId === email){
-        navigate('/dashboard');
-      }
-      else{
+      const isPasswordValid = await bcrypt.compare(password, data.password);
+      console.log(isPasswordValid);
+      if ( isPasswordValid && data.mailId === email) {
+        navigate("/dashboard");
+      } else {
         alert("Admin credentials are not matching");
       }
     } catch (error) {
